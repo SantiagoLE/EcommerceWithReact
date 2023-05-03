@@ -1,13 +1,13 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import CardProduct from '../components/CardProduct'
-
+import "./styles/home.css"
 
 const Home = () => {
     const {productsGlobal} = useSelector(state => state)
 
     return (
-      <div>
+      <div className='cardProducts-cotain'>
           {
               productsGlobal?.map(prod => (
 
