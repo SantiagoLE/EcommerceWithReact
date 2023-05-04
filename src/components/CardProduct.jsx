@@ -1,13 +1,24 @@
 import React from 'react'
 import "./styles/cardProduct.css"
+import { useNavigate } from 'react-router-dom';
 
 const CardProduct = ({ product }) => {
-  console.log(product);
+
+  const navigate = useNavigate()
+
+  const handleSelectProduct = () => {
+navigate(`/product/${product.id}`)
+  }
+
+  const handleBtnClick = e => {
+e.stopPropagation()
+  }
 
   return (
-    <article className='cardProduct'>
+    <article onClick={handleSelectProduct} className='cardProduct'>
       <header className='cardProdcut_img_contain'>
-        <img className='cardProduct_img' src={product.images[0].url} alt={product.title} />
+        <img className='cardProduct_img product_img1' src={product.images[0].url} alt={product.title} />
+        <img className='cardProduct_img product_img2' src={product.images[1].url} alt={product.title} />
       </header>
       <section className='cardProduct_section'>
         <h4 className='cardProduct_marca'>{product.brand}</h4>
@@ -15,8 +26,8 @@ const CardProduct = ({ product }) => {
       </section>
           <span className='cardProduct_price-title'>Price</span>
           <span className='cardProduct_price-value'>$ {product.price}</span>
-        <button className='cardProduct_icon-cart'>
-        <i className='bx bxs-cart' ></i>
+        <button onClick={handleBtnClick} className='cardProduct_icon-cart'>
+        <i className='bx bx-cart btn_cardProduct' ></i>
         </button>
     </article>
   )
