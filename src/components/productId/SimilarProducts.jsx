@@ -14,7 +14,6 @@ const SimilarProducts = ({product}) => {
      
     } , [url])
 
-    console.log(filterProducts);
     
   return (
     <section>
