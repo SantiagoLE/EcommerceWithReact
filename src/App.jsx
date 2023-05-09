@@ -4,10 +4,11 @@ import Home from './pages/Home'
 import { useEffect } from 'react'
 import {getAllProductsThunk } from './store/slices/products.slice'
 import { useDispatch } from 'react-redux'
-import Header from './pages/shared/Header'
+import Header from './components/shared/Header'
 import ProductId from './pages/ProductId'
 import Register from './pages/Register'
 import Login from './pages/Login'
+import Cart from './pages/Cart'
 
 //  PAGINA REFERENCIA: https://dashing-puppy-89779d.netlify.app
 
@@ -30,6 +31,7 @@ function App() {
         <Route path='/login' element={<Login/>} />
         <Route  path='/register' element={<Register/>}/>
       <Route path='/product/:id' element={<ProductId/>}/>
+      <Route path='/cart' element={<Cart/>}/>
       </Routes>
 
 

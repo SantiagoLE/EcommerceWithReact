@@ -1,10 +1,11 @@
 import React from 'react'
+import "./styles/sliderImg.css"
 
 const SliderImgs = ({product}) => {
   
     return (
     <div>
-        <img  src={product?.images[0].url} alt="" />
+        <img  className='sliderImg' src={product?.images[0].url} alt="" />
     </div>
   )
 }

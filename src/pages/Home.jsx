@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import CardProduct from '../components/CardProduct'
+import CardProduct from '../components/home/CardProduct'
 import "./styles/home.css"
 
 const Home = () => {

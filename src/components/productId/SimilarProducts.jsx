@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import useFetch from '../../hooks/useFetch'
-import CardProduct from '../CardProduct'
+import CardProduct from '../home/CardProduct'
+import "./styles/similarproduct.css"
 
 const SimilarProducts = ({product}) => {
 
@@ -16,9 +17,9 @@ const SimilarProducts = ({product}) => {
 
     
   return (
-    <section>
-        <h2>Discover similar products</h2>
-        <div>
+    <section >
+        <h2 className='similarProducts_title'>Discover similar products</h2>
+        <div className='similarProducts_items'>
 {
     filterProducts?.map(prod => {
         if(prod.id !== product.id){
