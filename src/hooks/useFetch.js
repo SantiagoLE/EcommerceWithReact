@@ -5,13 +5,13 @@ const useFetch = (url) => {
 
 const [apiInfo, setapiInfo] = useState()
 
-const getProductById = () => {
+const getApi = () => {
     axios.get(url)
     .then(res => setapiInfo(res.data) )
     .catch(err => console.log(err))
 }
  
-return [apiInfo, getProductById]
+return [apiInfo, getApi]
 
 }
 
