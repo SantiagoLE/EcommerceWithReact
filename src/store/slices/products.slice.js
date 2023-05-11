@@ -5,7 +5,7 @@ import axios from "axios";
 
 const productsSlice = createSlice({
 
-    name: "trainerName",
+    name: "products",
     initialState: null,
     reducers: {
         setProductsGlobal: (state, action) => action.payload

@@ -1,56 +1,58 @@
-:root{
+:root {
     --height_header: 70px;
-    --backgroun_red:  #f85555;
+    --backgroun_red: #f85555;
 }
 
 
-.header{
+.header {
     width: 100%;
     height: var(--height_header);
     display: flex;
     align-items: center;
-    position: relative;
+    left: 0;
+    top: 0;
     justify-content: space-between;
     padding: 0 1rem;
-    
+    position: fixed;
+    background-color: green;
+    z-index: 20;
 }
 
-.header_title{
+.header_title {
     font-size: 2.5rem;
     padding-bottom: 1rem;
     color: var(--backgroun_red);
 }
 
-.header_icon{
+.header_icon {
     font-size: 2rem;
     transition: color 200ms ease, transform 200ms ease;
 }
 
-.header_icon:hover{
+.header_icon:hover {
     color: var(--backgroun_red);
     transform: scale(1.1);
 }
 
-.header_navbar{
-    position: absolute;
+.header_navbar {
+    position: fixed;
     display: grid;
     align-items: center;
     background-color: white;
-    width: 100%;
+    min-width: 50%;
     height: 100vh;
     max-width: 200px;
     text-align: center;
-top: var(--height_header);
+    top: var(--height_header);
     right: 0;
-    z-index: 20;
     transition: right 500ms ease;
-    }
+}
 
-    .header_navbar-close{
-        right: -300%;      
-    }
+.header_navbar-close {
+    right: -300%;
+}
 
-    .header_list{
-        display: grid;
-        gap: 1rem;
-    }
+.header_list {
+    display: grid;
+    gap: 1rem;
+}

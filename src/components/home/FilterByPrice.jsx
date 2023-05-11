@@ -5,7 +5,6 @@ const FilterByPrice = ({setFromTo}) => {
 
 const {register, reset, handleSubmit} = useForm()
 
-
 const submit = (data) => {
 setFromTo(data);
 reset({

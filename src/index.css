@@ -28,6 +28,10 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, form, button, input, se
     font-family: inherit;
   }
   
+  i{
+    cursor: pointer;
+  }
+  
   input{
     outline: none;
     font-family: inherit;
