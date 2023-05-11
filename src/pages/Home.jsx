@@ -7,6 +7,7 @@ import FilterByPrice from '../components/home/FilterByPrice'
 
 const Home = () => {
     const {productsGlobal} = useSelector(state => state)
+
 const [inputValue, setInputValue] = useState("")
 
 const [fromTo, setFromTo] = useState({
@@ -45,7 +46,9 @@ setInputValue(input.current.value.toLowerCase().trim())
     return (
       <div className='cardProducts-cotain'>
         <input ref={input} onChange={handleChangeInput} type="text" />
+
         <FilterCategory/>
+        
         <FilterByPrice setFromTo={setFromTo}/>
           {
               productFilter?.map(prod => (

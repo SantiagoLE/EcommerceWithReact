@@ -1,16 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import "./styles/header.css"
 
 const Header = () => {
+const [navbarIsClose, setNavbarIsClose] = useState(true)
+
+const handleCloseNavbar = () => {
+setNavbarIsClose(!navbarIsClose)
+}
+
+const handleClick = () => {
+  setNavbarIsClose(true)
+}
+
+
   return (
-    <header>
-        <h1><Link to={"/"}>e-commerce</Link></h1>
-        <nav>
-            <ul>
-                <li><Link to={"/login"}>Login</Link></li>
-                <li><Link to={"/register"}>Register</Link></li>
-                <li><Link to={'/purchases'}>Purchases</Link></li>
-                <li><Link to={"/cart"}>Cart</Link></li>
+    <header className='header'>
+        <h1 className='header_title' onClick={handleClick}><Link to={"/"}>e-commerce</Link></h1>
+        <div>
+        <i onClick={handleCloseNavbar} className='header_icon bx bx-menu'></i>
+        </div>
+        <nav className={`header_navbar ${navbarIsClose && "header_navbar-close" } `}>
+            <ul className='header_list'>
+                <li className='header_list-item' onClick={handleCloseNavbar}><Link to={"/login"}>Login</Link></li>
+                <li className='header_list-item' onClick={handleCloseNavbar}><Link to={"/register"}>Register</Link></li>
+                <li className='header_list-item' onClick={handleCloseNavbar}><Link to={'/purchases'}>Purchases</Link></li>
+                <li className='header_list-item' onClick={handleCloseNavbar}><Link to={"/cart"}>Cart</Link></li>
             </ul>
         </nav>
     </header>
