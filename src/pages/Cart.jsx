@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getAllProductsCartThunk } from '../store/slices/cart.slice'
 import ProductInCart from '../components/cart/ProductInCart'
 import usePurchases from '../hooks/usePurchases'
+import "./styles/cart.css"
 
 const Cart = () => {
 
@@ -23,11 +24,11 @@ buyThisCart()
   }
 
   return (
-    <div>
+    <div className='cart'>
 
-      <h2>Cart</h2>
+      <h2 className='cart_title'> Cart</h2>
 
-      <div>
+      <div className='cart_container'>
         {
           cartGlobal?.map(prodCart => (
             <ProductInCart
@@ -39,10 +40,10 @@ buyThisCart()
         }
       </div>
 
-      <footer>
-        <span>Total:</span>
-        <h3>{totalPriceCart}</h3>
-        <button onClick={handlePurchase}>Buy now</button>
+      <footer className='cart_footer'>
+        <span className='cart_total-label'>Total:</span>
+        <h3 className='cart_total-value'>{totalPriceCart}</h3>
+        <button className='cart_btn' onClick={handlePurchase}>Buy now</button>
       </footer>
     </div>
 

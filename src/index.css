@@ -12,10 +12,12 @@ img{
 body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, form, button, input, select, textarea {
     margin: 0;
     padding: 0;
+  }
+
+  html{
     font-family: 'Barlow', sans-serif;
     font-family: 'Neuton', serif;
   }
-
   ul{
     list-style: none;
     padding-left: 0;
