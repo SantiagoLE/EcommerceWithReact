@@ -22,6 +22,7 @@ const Header = () => {
       </div>
       <nav className={`header_navbar ${navbarIsClose && "header_navbar-close"} `}>
         <ul className='header_list'>
+          <li className='header_list-item' onClick={handleCloseNavbar}><Link to={"/"}>Home</Link></li>
           <li className='header_list-item' onClick={handleCloseNavbar}><Link to={"/login"}>Login</Link></li>
           <li className='header_list-item' onClick={handleCloseNavbar}><Link to={"/register"}>Register</Link></li>
           <li className='header_list-item' onClick={handleCloseNavbar}><Link to={'/purchases'}>Purchases</Link></li>

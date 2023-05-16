@@ -24,6 +24,10 @@
     color: var(--backgroun_red);
 }
 
+.header_title:hover{
+    color: var(--backgroun_red);
+}
+
 .header_icon {
     font-size: 2rem;
     transition: color 200ms ease, transform 200ms ease;

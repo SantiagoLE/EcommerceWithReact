@@ -27,7 +27,8 @@ const SliderImgs = ({ product }) => {
 
 
   return (
-    <div className='slider'>
+    <div >
+     <div className='slider'>
       <button className='slider_arrowhead slider_left' onClick={handlePrev}>&lt;</button>
       <div style={objStyle} className='slider_interior'>
         {
@@ -41,6 +42,19 @@ const SliderImgs = ({ product }) => {
       </div>
       <button className='slider_arrowhead slider_rigth' onClick={handleNext}>&gt;</button>
     </div>
+
+     <div className='slider_select'>
+     {
+         product?.images.map(imgInfo => (
+           <div key={imgInfo.id} className='img_select-container'>
+             <img className='select_img'  src={imgInfo.url} alt="" />
+           </div>
+
+         ))
+       }
+     </div>
+    </div>
+   
   )
 }
 

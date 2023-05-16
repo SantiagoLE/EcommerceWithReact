@@ -21,7 +21,7 @@ const Home = () => {
     const handleChangeInput = () => {
         setInputValue(input.current.value.toLowerCase().trim())
     }
-
+console.log(fromTo)
     const productFilter = productsGlobal
         ?.filter(prod => prod.title.toLowerCase().trim().includes(inputValue))
         .filter(prod => {

@@ -2,6 +2,7 @@
 .login{
 padding: 1rem;
 display: grid;
+margin-top: 6rem;
 }
 
 .login_title{
@@ -20,7 +21,7 @@ margin-bottom: 2rem;
 
 .login_form{
 width: 100%;
-max-width: 500px;
+max-width: 400px;
 margin: 0 auto;
 }
 
