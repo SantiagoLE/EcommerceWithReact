@@ -3,7 +3,7 @@ import { useState } from "react"
 
 const useAutenthication = () => {
 
-const [loginSuccessful, setLoginSuccessful] = useState(false)
+const [loginSuccessfull, setLoginSuccessfull] = useState(false)
 const [loginError, setLoginError] = useState(false)
 
     const createNewUser = data => {
@@ -17,17 +17,24 @@ const [loginError, setLoginError] = useState(false)
         const url = "https://e-commerce-api-v2.academlo.tech/api/v1/users/login"
         axios.post(url, data)
         .then(res => {
-            setLoginSuccessful(res.data)
+            setLoginSuccessfull(res.data)
             setLoginError(false)
             localStorage.setItem("token", res.data.token)
+            const userFullName =  `${res.data.user.firstName} ${res.data.user.lastName}`
+            localStorage.setItem("userFullName", userFullName)
+           
+
+
           })
         .catch(err => {
             console.log(err)
             setLoginError(true)
         localStorage.removeItem("token")
+        localStorage.removeItem("userFullName")
+
         })
     }
-return {createNewUser, loginUser, loginSuccessful ,loginError}
+return {createNewUser, loginUser, loginSuccessfull ,loginError}
 }
 
 export default useAutenthication
