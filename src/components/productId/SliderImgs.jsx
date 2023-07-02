@@ -4,7 +4,7 @@ import "./styles/sliderImg.css"
 const SliderImgs = ({ product }) => {
 
   const [currentImg, setCurrentImg] = useState(0)
-
+console.log(currentImg)
   const objStyle = {
     transform: `translateX(calc(-${currentImg}/3 * 100%))`
   }
@@ -43,12 +43,12 @@ const SliderImgs = ({ product }) => {
       <button className='slider_arrowhead slider_rigth' onClick={handleNext}>&gt;</button>
     </div>
 
-     <div className='slider_select'>
+     <div className='select_img-container'>
      {
-         product?.images.map(imgInfo => (
-           <div key={imgInfo.id} className='img_select-container'>
-             <img className='select_img'  src={imgInfo.url} alt="" />
-           </div>
+         product?.images.map((imgInfo, index) => (
+          
+             <img className={`select_img ${index == currentImg && " select"}`} key={imgInfo.id} src={imgInfo.url} alt="" onClick={()=>setCurrentImg(index)}/>
+          
 
          ))
        }
