@@ -1,32 +1,43 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./styles/header.css"
 
 const Header = () => {
-  const [navbarIsClose, setNavbarIsClose] = useState(true)
 
-  const handleCloseNavbar = () => {
-    setNavbarIsClose(!navbarIsClose)
-  }
+  const [navbarIsActive, setNavbarIsActive] = useState(false)
 
-  const handleClick = () => {
-    setNavbarIsClose(true)
-  }
+  useEffect(() => {
+
+    const handleClickOutsideMenu = (event) => {
+
+      if (event.target.id !== "menu" && navbarIsActive) {
+        setNavbarIsActive(false)
+      }
+    }
+
+    document.addEventListener('click', handleClickOutsideMenu);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutsideMenu);
+    }
+  }, [document]);
+
+
 
 
   return (
     <header className='header'>
-      <h1 className='header_title' onClick={handleClick}><Link to={"/"}>e-commerce</Link></h1>
+      <h1 className='header_title'><Link to={"/"}>e-commerce</Link></h1>
       <div className='header_icon-container'>
-        <i onClick={handleCloseNavbar} className='header_icon bx bx-menu'></i>
+        <i id='menu' onClick={() => setNavbarIsActive(!navbarIsActive)} className='header_icon bx bx-menu'></i>
       </div>
-      <nav className={`header_navbar ${navbarIsClose && "header_navbar-close"} `}>
-        <ul className='header_list'>
-          <li className='header_list-item' onClick={handleCloseNavbar}><Link to={"/"}>Home</Link></li>
-          <li className='header_list-item' onClick={handleCloseNavbar}><Link to={"/login"}>Login</Link></li>
-          <li className='header_list-item' onClick={handleCloseNavbar}><Link to={"/register"}>Register</Link></li>
-          <li className='header_list-item' onClick={handleCloseNavbar}><Link to={'/purchases'}>Purchases</Link></li>
-          <li className='header_list-item' onClick={handleCloseNavbar}><Link to={"/cart"}>Cart</Link></li>
+      <nav id='menu' className={`header_navbar ${navbarIsActive && "header_navbar-active"} `}>
+        <ul id='menu' className='header_list'>
+          <li id='menu' className='header_list-item'><Link to={"/"} onClick={() => setNavbarIsActive(false)}>Home</Link></li>
+          <li id='menu' className='header_list-item'><Link to={"/login"} onClick={() => setNavbarIsActive(false)}>Login</Link></li>
+          <li id='menu' className='header_list-item'><Link to={"/register"} onClick={() => setNavbarIsActive(false)}>Register</Link></li>
+          <li id='menu' className='header_list-item'><Link to={'/purchases'} onClick={() => setNavbarIsActive(false)}>Purchases</Link></li>
+          <li id='menu' className='header_list-item'><Link to={"/cart"} onClick={() => setNavbarIsActive(false)}>Cart</Link></li>
         </ul>
       </nav>
     </header>

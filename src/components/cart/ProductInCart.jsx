@@ -11,7 +11,6 @@ const {deleteProductFromCart} = useCrudCart()
     deleteProductFromCart(prodCart.id)
   }
 
-  console.log(prodCart);
   return (
     <article className='prodcart'>
 <header className='prodcart_header'>

@@ -55,7 +55,9 @@ const Login = () => {
           <input className='login_input' type="password" id="password" />
         </div>
        { 
-       loginError && <p className='invalidCredentials'>Invalid credentials</p>
+       loginError 
+       ? <p className='invalidCredentials'>Invalid credentials</p>
+       : <p>&nbsp;</p>
        }
         <button className='login_btn'>Sign In</button>
       </form>

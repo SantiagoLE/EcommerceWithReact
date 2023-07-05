@@ -29,6 +29,10 @@ const [loginError, setLoginError] = useState(false)
         .catch(err => {
             console.log(err)
             setLoginError(true)
+            setTimeout(() => {
+                setLoginError(false)
+            }, 3000);
+            
         localStorage.removeItem("token")
         localStorage.removeItem("userFullName")
 

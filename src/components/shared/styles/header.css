@@ -48,12 +48,13 @@
     max-width: 200px;
     text-align: center;
     top: var(--height_header);
-    right: 0;
-    transition: right 500ms ease;
+    right: -300%;
 }
 
-.header_navbar-close {
-    right: -300%;
+.header_navbar-active {
+    right: 0;
+    transition: right 500ms ease;
+
 }
 
 .header_list {
