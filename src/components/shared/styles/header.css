@@ -55,11 +55,12 @@
     text-align: center;
     top: var(--height_header);
     right: -300%;
+    transition: right 2s ease;
 }
 
 .header_navbar-active {
     right: 0;
-    transition: right 500ms ease;
+    transition: right 1s ease;
 
 }
 
