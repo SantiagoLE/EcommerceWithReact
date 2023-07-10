@@ -27,7 +27,7 @@ const Header = () => {
 
   return (
     <header className='header'>
-      <h1 className='header_title'><Link to={"/"}>e-commerce</Link></h1>
+      <h1 className='header_title'><Link className='header_title-content' to={"/"}>e-commerce</Link></h1>
       <div className='header_icon-container'>
         <i id='menu' onClick={() => setNavbarIsActive(!navbarIsActive)} className='header_icon bx bx-menu'></i>
       </div>
